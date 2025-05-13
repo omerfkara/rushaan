@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  hi.txt: ""
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: rushaan-site
