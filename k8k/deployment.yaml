@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rushaan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rushaan
+  template:
+    metadata:
+      labels:
+        app: rushaan
+    spec:
+      containers:
+        - name: rushaan
+          image: nginx:alpine  # şimdilik statik bir image
+          ports:
+            - containerPort: 80
