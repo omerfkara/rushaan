@@ -23,11 +23,10 @@ jobs:
       - name: Build Docker image
         run: |
           docker build . -t ghcr.io/omerfkara/rushaan_fe:latest
-
+    
       - name: Push Docker image
         run: |
           docker push ghcr.io/omerfkara/rushaan_fe:latest
-
       - name: Update Kubernetes deployment manifest with new image
         run: |
           sed -i 's|image: .*|image: ghcr.io/omerfkara/rushaan_fe:latest|' k8s/deployment.yaml
