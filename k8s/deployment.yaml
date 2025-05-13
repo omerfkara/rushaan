@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rushaan-fe
+  labels:
+    app: rushaan-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rushaan-fe
+  template:
+    metadata:
+      labels:
+        app: rushaan-fe
+    spec:
+      containers:
+        - name: rushaan-fe
+          image: ghcr.io/omerfkara/rushaan_fe:latest
+          ports:
+            - containerPort: 80
