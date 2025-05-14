@@ -1,8 +1,9 @@
 <div *ngIf="loading">Yükleniyor...</div>
 
-<ul *ngIf="!loading">
-  <li *ngFor="let product of products">
-    <strong>{{ product.name }}</strong> - {{ product.price | currency:'TRY' }}
+<div class="product-list" *ngIf="!loading">
+  <div class="product-card" *ngFor="let product of products">
+    <strong>{{ product.name }}</strong>
+    <div>{{ product.price | currency:'TRY' }}</div>
     <p>{{ product.description }}</p>
-  </li>
-</ul>
+  </div>
+</div>
