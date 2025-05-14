@@ -22,7 +22,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
-      - name: Build Docker image
+      - name: Build Docker image - ${GITHUB_REF#refs/tags/}
         run: |
           IMAGE_TAG=${GITHUB_REF#refs/tags/}
           docker build . -t ghcr.io/omerfkara/rushaan_fe:${IMAGE_TAG}
